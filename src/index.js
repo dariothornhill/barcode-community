@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import 'spectre.css';
-// import 'icons.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

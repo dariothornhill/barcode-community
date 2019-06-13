@@ -1,10 +1,10 @@
 const devConfig = {
-  apiKey: 'AIzaSyCGloGDsGsTlgLEQt4DR1R2UAYhAW1hznE',
-  authDomain: 'barcode-network.firebaseapp.com',
-  databaseURL: 'https://barcode-network.firebaseio.com',
-  projectId: 'barcode-network',
-  storageBucket: 'barcode-network.appspot.com',
-  messagingSenderId: '320673544140'
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASEURL,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID
 };
 
 const prodConfig = {

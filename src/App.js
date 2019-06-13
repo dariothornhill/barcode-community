@@ -28,21 +28,6 @@ const About = () => {
     </div>
   );
 };
-// const Members = () => {
-//   return (
-//     <div class='empty' style={{ height: '100vh' }}>
-//       <div class='empty-icon'>
-//         <i class='icon icon-3x icon-people' />
-//       </div>
-//       <p class='empty-title h5'>There appears to be no one left</p>
-//       <p class='empty-subtitle'>Leave the computer and go find some friends</p>
-//       {/* <div class='empty-action input-group input-inline'>
-//         <input class='form-input' type='text' placeholder='' />
-//         <button class='btn btn-primary input-group-btn'>Search</button>
-//       </div> */}
-//     </div>
-//   );
-// };
 
 const App = () => {
   return (

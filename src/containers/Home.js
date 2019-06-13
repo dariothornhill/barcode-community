@@ -17,6 +17,7 @@ const Home = props => {
 
   const [threads, setThreads] = useState([]);
   // const [newPost, updatePost] = useState({});
+  // console.log(process.env.REACT_APP_APIKEY);
 
   useEffect(() => {
     db.collection('threads')
