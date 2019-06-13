@@ -14,38 +14,38 @@ const Form = props => {
   };
 
   return (
-    <form className='form-horizontal' onSubmit={handleSubmit}>
-      <div className='form-group'>
-        <div className='col-3 col-sm-12'>
-          <label className='form-label'>Name</label>
+    <form className="form-horizontal" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <div className="col-3 col-sm-12">
+          <label className="form-label">Name</label>
         </div>
-        <div className='col-6 col-sm-12'>
+        <div className="col-6 col-sm-12">
           <input
-            className='form-input'
-            type='text'
-            placeholder='Name'
-            name='name'
+            className="form-input"
+            type="text"
+            placeholder="Name"
+            name="name"
             value={fields.name}
             onChange={e => handleFieldChange(e)}
           />
         </div>
       </div>
-      <div className='form-group'>
-        <div className='col-3 col-sm-12'>
-          <label className='form-label'>Password</label>
+      <div className="form-group">
+        <div className="col-3 col-sm-12">
+          <label className="form-label">Password</label>
         </div>
-        <div className='col-6 col-sm-12'>
+        <div className="col-6 col-sm-12">
           <input
-            className='form-input'
-            type='password'
-            placeholder='Password'
-            name='password'
+            className="form-input"
+            type="password"
+            placeholder="Password"
+            name="password"
             value={fields.password}
             onChange={e => handleFieldChange(e)}
           />
         </div>
       </div>
-      <button type='submit' class='btn btn-primary'>
+      <button type="submit" className="btn btn-primary">
         Login
       </button>
     </form>

@@ -6,9 +6,7 @@ import { AuthContext } from '../context/AuthContext';
 import moment from 'moment';
 
 const Sidebar = props => {
-  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(
-    AuthContext
-  );
+  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(AuthContext);
 
   const handleAddPost = newPost => {
     // const { user } = this.props;
@@ -28,8 +26,8 @@ const Sidebar = props => {
   };
   return (
     <div>
-      <div class='card box'>
-        <div class='card-body'>
+      <div className="card box">
+        <div className="card-body">
           <h6>Create New Post</h6>
           {currentUser ? (
             <CreatePostForm onSubmit={handleAddPost} />

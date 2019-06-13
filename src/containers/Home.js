@@ -11,9 +11,7 @@ import CreatePostForm from '../components/CreatePostForm';
 import Sidebar from './Sidebar';
 
 const Home = props => {
-  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(
-    AuthContext
-  );
+  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(AuthContext);
 
   const [threads, setThreads] = useState([]);
   // const [newPost, updatePost] = useState({});
@@ -37,10 +35,10 @@ const Home = props => {
 
   console.log(threads);
   return (
-    <div className='container'>
-      <div class='docs-content'>
-        <div class='columns' style={{ padding: '30px' }}>
-          <div class='column col-9 col-sm-12'>
+    <div className="container">
+      <div className="docs-content">
+        <div className="columns" style={{ padding: '30px' }}>
+          <div className="column col-9 col-sm-12">
             {threads ? (
               threads
                 .sort(function(a, b) {
@@ -50,11 +48,11 @@ const Home = props => {
                 })
                 .map(item => <Post {...item} />)
             ) : (
-              <Empty title='threads' />
+              <Empty title="threads" />
             )}
           </div>
 
-          <div class='column col-3'>
+          <div className="column col-3">
             <Sidebar />
           </div>
         </div>

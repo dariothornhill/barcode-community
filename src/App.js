@@ -12,18 +12,18 @@ import Members from './containers/Members';
 
 const About = () => {
   return (
-    <div class='empty' style={{ height: '100vh' }}>
-      <div class='empty-icon'>
-        <i class='icon icon-3x icon-search' />
+    <div className="empty" style={{ height: '100vh' }}>
+      <div className="empty-icon">
+        <i className="icon icon-3x icon-search" />
       </div>
-      <p class='empty-title h5'>What is Barcode?</p>
-      <p class='empty-subtitle'>
-        Barcode is an inclusive community of software developers who meet
-        regularly in order to learn, share and collaborate
+      <p className="empty-title h5">What is Barcode?</p>
+      <p className="empty-subtitle">
+        Barcode is an inclusive community of software developers who meet regularly in order to learn, share and
+        collaborate
       </p>
-      {/* <div class='empty-action input-group input-inline'>
-        <input class='form-input' type='text' placeholder='' />
-        <button class='btn btn-primary input-group-btn'>Search</button>
+      {/* <div className='empty-action input-group input-inline'>
+        <input className='form-input' type='text' placeholder='' />
+        <button className='btn btn-primary input-group-btn'>Search</button>
       </div> */}
     </div>
   );
@@ -31,18 +31,18 @@ const About = () => {
 
 const App = () => {
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
         <div>
           <AuthProvider>
             <Nav />
             <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/login' component={Login} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
 
-              <Route exact path='/about' component={About} />
-              <Route exact path='/members' component={Members} />
-              <Route exact path='/thread/:threadId' component={Thread} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/members" component={Members} />
+              <Route exact path="/thread/:threadId" component={Thread} />
             </Switch>
           </AuthProvider>
         </div>

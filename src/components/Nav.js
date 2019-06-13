@@ -27,7 +27,7 @@ const Nav = () => {
             {`Welcome back, ${currentUser.userName}  `}
             <button
               type='button'
-              class='btn btn-primary'
+              className='btn btn-primary'
               onClick={handleLogout}
             >
               Logout

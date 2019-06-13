@@ -37,106 +37,92 @@ const MembershipForm = props => {
   };
 
   return (
-    <form
-      className='form-horizontal'
-      onSubmit={handleSubmit}
-      autoComplete='off'
-    >
+    <form className="form-horizontal" onSubmit={handleSubmit} autoComplete="off">
       <div className={`form-group ${errors.title ? 'has-error' : ''}`}>
         <label>Full Name</label>
         <input
-          className='form-input'
-          type='text'
-          placeholder='What is your full name?'
-          name='profile_name'
+          className="form-input"
+          type="text"
+          placeholder="What is your full name?"
+          name="profile_name"
           value={fields.name}
           onChange={e => handleFieldChange(e)}
           onBlur={e => handleBlur(e)}
         />
-        {errors.title && <p class='form-input-hint'>{errors.title}</p>}
+        {errors.title && <p className="form-input-hint">{errors.title}</p>}
       </div>
       <div className={`form-group ${errors.title ? 'has-error' : ''}`}>
         <label>Email</label>
         <input
-          className='form-input'
-          type='text'
-          placeholder='What is your email?'
-          name='email'
+          className="form-input"
+          type="text"
+          placeholder="What is your email?"
+          name="email"
           value={fields.email}
           onChange={e => handleFieldChange(e)}
           onBlur={e => handleBlur(e)}
         />
-        {errors.title && <p class='form-input-hint'>{errors.title}</p>}
+        {errors.title && <p className="form-input-hint">{errors.title}</p>}
       </div>
       <div className={`form-group ${errors.title ? 'has-error' : ''}`}>
         <label>Your website</label>
         <input
-          className='form-input'
-          type='text'
+          className="form-input"
+          type="text"
           placeholder="What's your website?"
-          name='profile_website'
+          name="profile_website"
           value={fields.website}
           onChange={e => handleFieldChange(e)}
           onBlur={e => handleBlur(e)}
         />
-        {errors.title && <p class='form-input-hint'>{errors.title}</p>}
+        {errors.title && <p className="form-input-hint">{errors.title}</p>}
       </div>
       <div className={`form-group ${errors.content ? 'has-error' : ''}`}>
         <label>What projects are you working on?</label>
         <textarea
-          className='form-input'
-          placeholder='Please keep to under 1000 words'
-          name='profile_projects'
+          className="form-input"
+          placeholder="Please keep to under 1000 words"
+          name="profile_projects"
           value={fields.projects}
           onChange={e => handleFieldChange(e)}
           onBlur={e => handleBlur(e)}
         />
-        {errors.content && <p class='form-input-hint'>{errors.content}</p>}
+        {errors.content && <p className="form-input-hint">{errors.content}</p>}
       </div>
       <div className={`form-group ${errors.content ? 'has-error' : ''}`}>
         <label>Tell us about yourself</label>
         <textarea
-          className='form-input'
-          placeholder='Please keep to under 1000 words'
-          name='content'
+          className="form-input"
+          placeholder="Please keep to under 1000 words"
+          name="content"
           value={fields.biography}
           onChange={e => handleFieldChange(e)}
           onBlur={e => handleBlur(e)}
         />
-        {errors.content && <p class='form-input-hint'>{errors.content}</p>}
+        {errors.content && <p className="form-input-hint">{errors.content}</p>}
       </div>
-      <div className='form-group'>
+      <div className="form-group">
         <label>What skills/tech do you want to learn?</label>
-        <div class='input-group'>
-          <input
-            type='text'
-            class='form-input'
-            placeholder=''
-            onChange={e => setLearnObjective(e.target.value)}
-          />
+        <div className="input-group">
+          <input type="text" className="form-input" placeholder="" onChange={e => setLearnObjective(e.target.value)} />
           <button
-            type='button'
-            class='btn btn-primary input-group-btn'
-            onClick={() => handleAddCollection(newLearnObjective)}
-          >
+            type="button"
+            className="btn btn-primary input-group-btn"
+            onClick={() => handleAddCollection(newLearnObjective)}>
             Add to List
           </button>
         </div>
         {collection.length > 0 && (
-          <ul class='menu' style={{ width: '100vw', textAlign: 'left' }}>
-            <li class='divider' data-content='Want to Learn' />
+          <ul className="menu" style={{ width: '100vw', textAlign: 'left' }}>
+            <li className="divider" data-content="Want to Learn" />
             {collection.map(item => (
-              <li class='menu-item'>{item}</li>
+              <li className="menu-item">{item}</li>
             ))}
           </ul>
         )}
       </div>
 
-      <button
-        type='submit'
-        class='btn btn-primary'
-        disabled={errors.title || errors.content}
-      >
+      <button type="submit" className="btn btn-primary" disabled={errors.title || errors.content}>
         Save Profile
       </button>
     </form>

@@ -12,9 +12,7 @@ import { comment } from 'postcss-selector-parser';
 
 const Thread = props => {
   console.log(props);
-  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(
-    AuthContext
-  );
+  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(AuthContext);
 
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
@@ -41,7 +39,7 @@ const Thread = props => {
         // console.log('Current cities in CA: ', cities.join(', '));
         setComments(comments);
       });
-  }, []);
+  }, [threadId]);
 
   const handleAddComment = e => {
     e.preventDefault();
@@ -68,59 +66,55 @@ const Thread = props => {
 
   console.log(post);
   return (
-    <div className='container'>
-      <div class='docs-content'>
-        <div class='columns' style={{ padding: '30px' }}>
-          <div class='column col-9 col-sm-12'>
+    <div className="container">
+      <div className="docs-content">
+        <div className="columns" style={{ padding: '30px' }}>
+          <div className="column col-9 col-sm-12">
             <Post {...post} {...comments} />
-            <div class='panel comments-indent'>
-              <div class='panel-header'>
-                <div class='panel-title text-bold'>Add a Comment</div>
+            <div className="panel comments-indent">
+              <div className="panel-header">
+                <div className="panel-title text-bold">Add a Comment</div>
                 <form>
-                  <div class='input-group'>
+                  <div className="input-group">
                     <input
-                      class='form-input'
-                      type='text'
-                      placeholder='Say Something here'
+                      className="form-input"
+                      type="text"
+                      placeholder="Say Something here"
                       value={newComment}
                       onChange={e => updateComment(e.target.value)}
                     />
-                    <button
-                      class='btn btn-primary input-group-btn'
-                      type='button'
-                      onClick={handleAddComment}
-                    >
+                    <button className="btn btn-primary input-group-btn" type="button" onClick={handleAddComment}>
                       Send
                     </button>
                   </div>
                 </form>
               </div>
-              <div class='panel-body'>
+              <div className="panel-body">
                 {comments &&
                   comments.map(item => (
-                    <div class='tile'>
-                      <div class='tile-icon'>
-                        <figure class='avatar'>
-                          <img src={item.photoURL} alt='Avatar' />
+                    <div className="tile">
+                      <div className="tile-icon">
+                        <figure className="avatar">
+                          <img src={item.photoURL} alt="Avatar" />
                         </figure>
                       </div>
-                      <div class='tile-content'>
-                        <p class='tile-title text-bold'>{item.author}</p>
-                        <p class='tile-subtitle'>{item.content}</p>
+                      <div className="tile-content">
+                        <p className="tile-title text-bold">{item.author}</p>
+                        <p className="tile-subtitle">{item.content}</p>
                       </div>
                     </div>
                   ))}
               </div>
-              {/* <div class='panel-footer'>
-                <div class='input-group'>
-                  <input class='form-input' type='text' placeholder='Hello' />
-                  <button class='btn btn-primary input-group-btn'>Send</button>
+              {/* <div className='panel-footer'>
+                <div className='input-group'>
+                  <input className='form-input' type='text' placeholder='Hello' />
+                  <button className='btn btn-primary input-group-btn'>Send</button>
                 </div>
               </div> */}
             </div>
           </div>
 
-          <div class='column col-3'>
+          <div className="column col-3">
             <Sidebar />
           </div>
         </div>
