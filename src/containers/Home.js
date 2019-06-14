@@ -81,7 +81,11 @@ const Home = props => {
                 .map(item => (
                   <Post
                     {...item}
-                    isEditable={currentUser.user_id === item.creator_id}
+                    isEditable={
+                      currentUser
+                        ? currentUser.user_id === item.creator_id
+                        : false
+                    }
                     onEdit={() => handleEditModal(item)}
                     onDelete={() => handlePostModal(item)}
                   />
