@@ -18,6 +18,7 @@ const Sidebar = props => {
       content: newPost.content,
       createdAt: moment().format('LLL'),
       author: currentUser.userName ? currentUser.userName : currentUser.user_id,
+      creator_id: currentUser.user_id,
       photoURL: currentUser.photo
       // completed: false
     });

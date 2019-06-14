@@ -7,6 +7,17 @@ const Post = props => {
   return (
     <div className="post" key={props.threadId}>
       <div>
+        {props.isEditable && (
+          <div className="float-right">
+            <span style={{ padding: '1em' }} onClick={props.onEdit}>
+              <i className="icon icon-edit" />
+            </span>
+            <span onClick={props.onDelete}>
+              <i className="icon icon-delete" />
+            </span>
+          </div>
+        )}
+
         <b>{title}</b>
         <span className="link">
           posted {moment(createdAt).fromNow()} by <b>{author}</b>
