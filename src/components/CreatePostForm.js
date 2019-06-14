@@ -32,39 +32,31 @@ const Form = props => {
   };
 
   return (
-    <form
-      className='form-horizontal'
-      onSubmit={handleSubmit}
-      autoComplete='off'
-    >
+    <form className="form-horizontal" onSubmit={handleSubmit} autoComplete="off">
       <div className={`form-group ${errors.title ? 'has-error' : ''}`}>
         <input
-          className='form-input'
-          type='text'
-          placeholder='Type Title'
-          name='title'
+          className="form-input"
+          type="text"
+          placeholder="Type Title"
+          name="title"
           value={fields.title}
           onChange={e => handleFieldChange(e)}
           onBlur={e => handleBlur(e)}
         />
-        {errors.title && <p class='form-input-hint'>{errors.title}</p>}
+        {errors.title && <p className="form-input-hint">{errors.title}</p>}
       </div>
       <div className={`form-group ${errors.content ? 'has-error' : ''}`}>
         <textarea
-          className='form-input'
-          placeholder='Type content'
-          name='content'
+          className="form-input"
+          placeholder="Type content"
+          name="content"
           value={fields.content}
           onChange={e => handleFieldChange(e)}
           onBlur={e => handleBlur(e)}
         />
-        {errors.content && <p class='form-input-hint'>{errors.content}</p>}
+        {errors.content && <p className="form-input-hint">{errors.content}</p>}
       </div>
-      <button
-        type='submit'
-        class='btn btn-primary'
-        disabled={errors.title || errors.content}
-      >
+      <button type="submit" className="btn btn-primary" disabled={errors.title || errors.content}>
         Submit
       </button>
     </form>

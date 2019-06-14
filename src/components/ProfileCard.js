@@ -3,51 +3,42 @@ import moment from 'moment';
 
 const ProfileCard = props => {
   // console.log(props);
-  const {
-    profile_name,
-    profile_projects,
-    profile_website,
-    content,
-    profile_photo
-  } = props;
+  const { profile_name, profile_projects, profile_website, content, profile_photo } = props;
   return (
-    <div class='post' key={props.creator_id}>
+    <div className="post" key={props.creator_id}>
       <div style={{ paddingBottom: '1em' }}>
-        <figure
-          class='avatar avatar-lg float-left'
-          style={{ marginRight: '1em' }}
-        >
-          <img src={profile_photo} alt='Avatar' />
+        <figure className="avatar avatar-lg float-left" style={{ marginRight: '1em' }}>
+          <img src={profile_photo} alt="Avatar" />
         </figure>
         {props.isEditable && (
-          <div class='float-right'>
+          <div className="float-right">
             <span style={{ padding: '1em' }} onClick={props.onEdit}>
-              <i class='icon icon-edit' />
+              <i className="icon icon-edit" />
             </span>
             <span onClick={props.onDelete}>
-              <i class='icon icon-delete' />
+              <i className="icon icon-delete" />
             </span>
           </div>
         )}
 
         <div>
           <b>{profile_name}</b>
-          <span class='link'>{profile_website}</span>
+          <span className="link">{profile_website}</span>
         </div>
       </div>
-      <div class='clearfix' />
+      <div className="clearfix" />
 
-      {/* <span class='text-bold'>Projects</span> */}
-      <div class='divider' data-content='Projects' />
+      {/* <span className='text-bold'>Projects</span> */}
+      <div className="divider" data-content="Projects" />
       <p>{profile_projects}</p>
 
-      {/* <span class='text-bold'>A little about yourself</span> */}
-      <div class='divider' data-content='A little about yourself' />
+      {/* <span className='text-bold'>A little about yourself</span> */}
+      <div className="divider" data-content="A little about yourself" />
       <p>{content}</p>
 
-      {/* <p class='post_info'>
+      {/* <p className='post_info'>
         <b>{comments ? comments.length : 0} comments</b>
-        <a href={`/thread/${threadId}`} class='btn float-right'>
+        <a href={`/thread/${threadId}`} className='btn float-right'>
           Reply
         </a>
       </p> */}

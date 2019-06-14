@@ -8,9 +8,7 @@ import ConfirmModal from '../components/ActionModal';
 import { AuthContext } from '../context/AuthContext';
 
 const Members = props => {
-  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(
-    AuthContext
-  );
+  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(AuthContext);
   const [memberModal, setMemberModal] = useState({
     isModalOpen: false,
     member: {},
@@ -67,21 +65,17 @@ const Members = props => {
   };
 
   return (
-    <div className='container'>
-      <div class='docs-content'>
-        <div class='columns' style={{ padding: '30px' }}>
-          <div class='column col-8 col-sm-12'>
+    <div className="container">
+      <div className="docs-content">
+        <div className="columns" style={{ padding: '30px' }}>
+          <div className="column col-8 col-sm-12">
             {members ? (
-              <div class='columns'>
+              <div className="columns">
                 {members.map(item => (
-                  <div class='column col-6'>
+                  <div className="column col-6">
                     <ProfileCard
                       {...item}
-                      isEditable={
-                        currentUser
-                          ? currentUser.user_id === item.creator_id
-                          : false
-                      }
+                      isEditable={currentUser ? currentUser.user_id === item.creator_id : false}
                       onEdit={() => handleEditModal(item)}
                       onDelete={() => handleMemberModal(item)}
                     />
@@ -89,37 +83,30 @@ const Members = props => {
                 ))}
               </div>
             ) : (
-              <div class='empty' style={{ height: '100vh' }}>
-                <div class='empty-icon'>
-                  <i class='icon icon-3x icon-people' />
+              <div className="empty" style={{ height: '100vh' }}>
+                <div className="empty-icon">
+                  <i className="icon icon-3x icon-people" />
                 </div>
-                <p class='empty-title h5'>There appears to be no one here</p>
-                <p class='empty-subtitle'>
-                  Leave the computer and go find some friends
-                </p>
+                <p className="empty-title h5">There appears to be no one here</p>
+                <p className="empty-subtitle">Leave the computer and go find some friends</p>
               </div>
             )}
           </div>
-          <div class='column col-4 col-sm-12'>
-            <div class='card box'>
-              <div class='card-body'>
+          <div className="column col-4 col-sm-12">
+            <div className="card box">
+              <div className="card-body">
                 <h3>Create Profile</h3>
                 <span>
-                  By creating a developer profile, your skills and experience
-                  will be visible to other members, potential employers and
-                  investors alike
+                  By creating a developer profile, your skills and experience will be visible to other members,
+                  potential employers and investors alike
                 </span>
-                {currentUser ? (
-                  <MembershipForm onSubmit={handleAddMember} />
-                ) : (
-                  <p>Sorry but you need to login first</p>
-                )}
+                {currentUser ? <MembershipForm onSubmit={handleAddMember} /> : <p>Sorry but you need to login first</p>}
               </div>
             </div>
           </div>
           <ConfirmModal
-            title='Confirm Modal'
-            content='Are you sure that you want to remove that?'
+            title="Confirm Modal"
+            content="Are you sure that you want to remove that?"
             active={memberModal.isModalOpen}
             handleConfirm={() => handleDeleteMember(memberModal.member)}
             handleClose={() => handleMemberModal({})}

@@ -11,9 +11,7 @@ import ConfirmModal from '../components/ActionModal';
 import Sidebar from './Sidebar';
 
 const Home = props => {
-  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(
-    AuthContext
-  );
+  const [currentUser, setCurrentUser, handleLogin, handleLogout] = useContext(AuthContext);
 
   const [threads, setThreads] = useState([]);
   const [postModal, setPostModal] = useState({
@@ -67,10 +65,10 @@ const Home = props => {
 
   console.log(threads);
   return (
-    <div className='container'>
-      <div class='docs-content'>
-        <div class='columns' style={{ padding: '30px' }}>
-          <div class='column col-9 col-sm-12'>
+    <div className="container">
+      <div className="docs-content">
+        <div className="columns" style={{ padding: '30px' }}>
+          <div className="column col-9 col-sm-12">
             {threads ? (
               threads
                 .sort(function(a, b) {
@@ -91,11 +89,11 @@ const Home = props => {
                   />
                 ))
             ) : (
-              <Empty title='threads' />
+              <Empty title="threads" />
             )}
           </div>
 
-          <div class='column col-3'>
+          <div className="column col-3">
             <Sidebar />
           </div>
           <ConfirmModal
