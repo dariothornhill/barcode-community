@@ -11,6 +11,9 @@ const Nav = () => {
     <header className='navbar' style={{ padding: '10px 30px' }}>
       <section className='navbar-section'>
         <Link className='btn btn-link' to='/'>
+          <img src='/images/logo/barcode_logo.png' height='30px' />
+        </Link>
+        <Link className='btn btn-link' to='/'>
           Home
         </Link>
         <Link className='btn btn-link' to='/members'>
