@@ -6,7 +6,7 @@ import moment from 'moment';
 
 import Post from '../components/Post';
 import Empty from '../components/Empty';
-import CreatePostForm from '../components/CreatePostForm';
+import ConfirmModal from '../components/ActionModal';
 
 import Sidebar from './Sidebar';
 
@@ -16,9 +16,11 @@ const Home = props => {
   );
 
   const [threads, setThreads] = useState([]);
-  // const [newPost, updatePost] = useState({});
-  // console.log(process.env.REACT_APP_APIKEY);
-
+  const [postModal, setPostModal] = useState({
+    isModalOpen: false,
+    post: {},
+    isEditing: false
+  });
   useEffect(() => {
     db.collection('threads')
       // .doc(threadId)
@@ -35,6 +37,34 @@ const Home = props => {
       });
   }, []);
 
+  const handleDeletePost = data => {
+    console.log(data);
+    // toggleModal(true);
+    db.collection('threads')
+      .doc(data.threadId)
+      .delete()
+      .then(function() {
+        console.log('Document successfully deleted!');
+      })
+      .catch(function(error) {
+        console.error('Error removing document: ', error);
+      });
+
+    handlePostModal({});
+  };
+
+  const handlePostModal = post => {
+    setPostModal({ isModalOpen: !postModal.isModalOpen, post });
+  };
+
+  const handleEditModal = member => {
+    setPostModal({
+      isModalOpen: !postModal.isModalOpen,
+      member,
+      isEditing: true
+    });
+  };
+
   console.log(threads);
   return (
     <div className='container'>
@@ -48,7 +78,14 @@ const Home = props => {
                     dateB = new Date(b.createdAt);
                   return dateB - dateA;
                 })
-                .map(item => <Post {...item} />)
+                .map(item => (
+                  <Post
+                    {...item}
+                    isEditable={currentUser.user_id === item.creator_id}
+                    onEdit={() => handleEditModal(item)}
+                    onDelete={() => handlePostModal(item)}
+                  />
+                ))
             ) : (
               <Empty title='threads' />
             )}
@@ -57,6 +94,13 @@ const Home = props => {
           <div class='column col-3'>
             <Sidebar />
           </div>
+          <ConfirmModal
+            title='Confirm Modal'
+            content='Are you sure that you want to remove that?'
+            active={postModal.isModalOpen}
+            handleConfirm={() => handleDeletePost(postModal.post)}
+            handleClose={() => handlePostModal({})}
+          />
         </div>
       </div>
     </div>

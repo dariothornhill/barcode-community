@@ -19,6 +19,16 @@ const ProfileCard = props => {
         >
           <img src={profile_photo} alt='Avatar' />
         </figure>
+        {props.isEditable && (
+          <div class='float-right'>
+            <span style={{ padding: '1em' }} onClick={props.onEdit}>
+              <i class='icon icon-edit' />
+            </span>
+            <span onClick={props.onDelete}>
+              <i class='icon icon-delete' />
+            </span>
+          </div>
+        )}
 
         <div>
           <b>{profile_name}</b>
