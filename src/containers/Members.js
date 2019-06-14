@@ -77,7 +77,11 @@ const Members = props => {
                   <div class='column col-6'>
                     <ProfileCard
                       {...item}
-                      isEditable={currentUser.user_id === item.creator_id}
+                      isEditable={
+                        currentUser
+                          ? currentUser.user_id === item.creator_id
+                          : false
+                      }
                       onEdit={() => handleEditModal(item)}
                       onDelete={() => handleMemberModal(item)}
                     />
