@@ -39,12 +39,12 @@ const App = () => {
             {/* <Nav /> */}
             <Switch>
               <Route exact path='/' component={Landing} />
-              <Route exact path='/home' component={Home} />
+              {/* <Route exact path='/home' component={Home} />
               <Route exact path='/login' component={Login} />
 
               <Route exact path='/about' component={About} />
               <Route exact path='/members' component={Members} />
-              <Route exact path='/thread/:threadId' component={Thread} />
+              <Route exact path='/thread/:threadId' component={Thread} /> */}
             </Switch>
           </AuthProvider>
         </div>
