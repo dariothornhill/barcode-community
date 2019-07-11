@@ -18,48 +18,52 @@ const Members = props => {
   });
 
   const [members, setMembers] = useState([]);
-  const [hasProfile, setHasProfile] = useState(false);
+  const [profileInfo, setProfileInfo] = useState({});
+
+  // let profileInfo;
 
   useEffect(() => {
-    db.collection('members').onSnapshot(function(querySnapshot) {
-      var members = [];
-      querySnapshot.forEach(function(doc) {
-        let post = doc.data();
-        post.memberId = doc.id;
-        members.push(post);
-      });
-      setMembers(members);
-    });
-
-    // console.log(currentUser);
-    const email =
-      currentUser && 'email' in currentUser ? currentUser.email : false;
     db.collection('members')
-      .doc(email)
       .get()
-      .then(x => setHasProfile(x.exists));
-  }, [currentUser, setMembers, setHasProfile]);
+      .then(function(querySnapshot) {
+        var members = [];
+        querySnapshot.forEach(function(doc) {
+          let profile = doc.data();
+          profile.memberId = doc.id;
+          if (profile.email === currentUser.email) {
+            setProfileInfo(profile);
+          }
+          members.push(profile);
+        });
+        setMembers(members);
+      })
+      .then(() => {
+        // let obj = members.find(o => o.email === currentUser.email);
+        // console.log(members, obj);
+        // setProfile(members.find(o => o.email == currentUser.email));
+      });
+
+    // console.log(members, obj);
+  }, []);
 
   const handleAddMember = newMember => {
     newMember.creator_id = currentUser.user_id;
-    console.log(newMember);
+    newMember.user_email = currentUser.email; //Assuming that the user may login using a different email than their preferred work email
+
     db.collection('members')
-      .doc(currentUser.email)
-      .set(newMember)
+      .add(newMember)
       .then(x => {
-        setHasProfile(true);
+        // setHasProfile(true);
       });
   };
 
   const handleDeleteMember = member => {
-    console.log(member);
-    // toggleModal(true);
     db.collection('members')
-      .doc(currentUser.email)
+      .doc(member.memberId)
       .delete()
       .then(function() {
         console.log('Document successfully deleted!');
-        setHasProfile(false);
+        // setHasProfile(false);
       })
       .catch(function(error) {
         console.error('Error removing document: ', error);
@@ -126,27 +130,21 @@ const Members = props => {
                   will be visible to other members, potential employers and
                   investors alike
                 </span>
+                {/* {console.log(members.find(o => o.email === 'currentUser.email'))} */}
+                {/* {console.log(profileInfo)} */}
                 {currentUser ? (
-                  <MembershipForm onSubmit={handleAddMember} />
+                  <MembershipForm
+                    profile={profileInfo ? profileInfo : {}}
+                    onSubmit={handleAddMember}
+                  />
                 ) : (
                   <p>Sorry but you need to login first</p>
-                )}
-                {currentUser && hasProfile ? (
-                  <button
-                    type='submit'
-                    class='btn btn-secondary'
-                    onClick={handleDeleteMember}
-                  >
-                    Delete Profile {console.log(currentUser && hasProfile)}
-                  </button>
-                ) : (
-                  ''
                 )}
               </div>
             </div>
           </div>
           <ConfirmModal
-            title='Confirm Modal'
+            title='Remove Profile?'
             content='Are you sure that you want to remove that?'
             active={memberModal.isModalOpen}
             handleConfirm={() => handleDeleteMember(memberModal.member)}
