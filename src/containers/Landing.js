@@ -16,50 +16,52 @@ const Landing = props => {
         </div> */}
         <div>
           <nav className='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
-            <a className='navbar-brand' href='#'>
-              <img src='images/logo/barcode_logo.png' alt='' height='50px' />
-            </a>
-            <button
-              className='navbar-toggler'
-              type='button'
-              data-toggle='collapse'
-              data-target='#navbarSupportedContent'
-              aria-controls='navbarSupportedContent'
-              aria-expanded='false'
-              aria-label='Toggle navigation'
-            >
-              <span className='navbar-toggler-icon' />
-            </button>
+            <div className='container'>
+              <a className='navbar-brand' href='#'>
+                <img src='images/logo/barcode_logo.png' alt='' height='50px' />
+              </a>
+              <button
+                className='navbar-toggler'
+                type='button'
+                data-toggle='collapse'
+                data-target='#navbarSupportedContent'
+                aria-controls='navbarSupportedContent'
+                aria-expanded='false'
+                aria-label='Toggle navigation'
+              >
+                <span className='navbar-toggler-icon' />
+              </button>
 
-            <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-              <ul className='navbar-nav ml-auto'>
-                <li className='nav-item active'>
-                  <a className='nav-link' href='#intro'>
-                    Home <span className='sr-only'>(current)</span>
-                  </a>
-                </li>
-                <li className='nav-item'>
-                  <a className='nav-link' href='#services'>
-                    What we do
-                  </a>
-                </li>
-                <li className='nav-item'>
-                  <a className='nav-link' href='#team'>
-                    Team
-                  </a>
-                </li>
-                <li className='nav-item'>
-                  <a className='nav-link' href='#footer'>
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-              {/* <form className='form-inline my-2 my-lg-0'>
+              <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+                <ul className='navbar-nav ml-auto'>
+                  <li className='nav-item active'>
+                    <a className='nav-link' href='#intro'>
+                      Home <span className='sr-only'>(current)</span>
+                    </a>
+                  </li>
+                  <li className='nav-item'>
+                    <a className='nav-link' href='#services'>
+                      What we do
+                    </a>
+                  </li>
+                  <li className='nav-item'>
+                    <a className='nav-link' href='#team'>
+                      Team
+                    </a>
+                  </li>
+                  <li className='nav-item'>
+                    <a className='nav-link' href='#footer'>
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+                {/* <form className='form-inline my-2 my-lg-0'>
                 <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />
                 <button className='btn btn-outline-success my-2 my-sm-0' type='submit'>
                   Search
                 </button>
               </form> */}
+              </div>
             </div>
           </nav>
         </div>
@@ -92,6 +94,14 @@ const Landing = props => {
                 >
                   Join as a Partner
                 </a>
+                {/* <a
+                  href='https://forms.gle/dSP8xFXYMT6wPhBz5'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className='btn-block btn-whatsapp'
+                >
+                  Join Our Whatsapp Group
+                </a> */}
               </div>
             </div>
 
@@ -104,6 +114,26 @@ const Landing = props => {
           </div>
         </div>
       </section>
+
+      <section id='call-to-action' className='wow fadeInUp'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-9 text-center text-lg-left'>
+              <h3 className='cta-title'>Join our Active Whatsapp group of Developers</h3>
+              <p className='cta-text'>
+                Join our Whatsapp group of almost 100 software developers who are passionate to learn, share and
+                collaborate with each other to build innovative products for both commercial and social good initiatives
+              </p>
+            </div>
+            <div className='col-lg-3 cta-btn-container text-center'>
+              <a className='cta-btn align-middle' href='#'>
+                Join Whatsapp <i class='fab fa-whatsapp' />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* #call-to-action --> */}
 
       <main id='main'>
         <section id='clients' className='wow fadeInUp'>
@@ -282,21 +312,6 @@ const Landing = props => {
 
           <div className='container' />
         </section>
-
-        {/* <!-- <section id="call-to-action" className="wow fadeInUp">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-9 text-center text-lg-left">
-            <h3 className="cta-title">Call To Action</h3>
-            <p className="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div className="col-lg-3 cta-btn-container text-center">
-            <a className="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
-        </div>
-
-      </div>
-    </section>#call-to-action --> */}
 
         {/* <!-- <section id="features">
       <div className="container">
@@ -558,7 +573,7 @@ const Landing = props => {
             </div>
 
             <div className='row'>
-              <div className='col-lg-4 col-md-4 wow fadeInUp'>
+              <div className='col-md-3 wow fadeInUp'>
                 <div className='member'>
                   <img src='images/team/shannonclarke.jpg' className='img-fluid' alt='' />
                   <div className='member-info'>
@@ -567,10 +582,10 @@ const Landing = props => {
                       <span>Facebook Developer Circle Lead</span>
                       <div className='social'>
                         <a href='#'>
-                          <i className='fa fa-twitter' />
+                          <i className='fab fa-twitter' />
                         </a>
                         <a href='#'>
-                          <i className='fa fa-linkedin' />
+                          <i className='fab fa-linkedin' />
                         </a>
                       </div>
                     </div>
@@ -578,24 +593,28 @@ const Landing = props => {
                 </div>
               </div>
 
-              {/* <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div className="member">
-                <img src="images/team-4.jpg" className="img-fluid" alt="">
-                <div className="member-info">
-                  <div className="member-info-content">
-                    <h4>Kimberley Adams</h4>
-                    <span>Future Guyana</span>
-                    <div className="social">
-                      <a href=""><i className="fa fa-twitter"></i></a>
-                      
-                      <a href=""><i className="fa fa-linkedin"></i></a>
+              <div className='col-md-3 wow fadeInUp' data-wow-delay='0.3s'>
+                <div className='member'>
+                  <img src='images/team/kimberlyadams.jpg' className='img-fluid' alt='' />
+                  <div className='member-info'>
+                    <div className='member-info-content'>
+                      <h4>Kimberley Adams</h4>
+                      <span>Future Guyana</span>
+                      <div className='social'>
+                        <a href=''>
+                          <i className='fab fa-twitter' />
+                        </a>
+
+                        <a href=''>
+                          <i className='fab fa-linkedin' />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>  */}
 
-              <div className='col-lg-4 col-md-4 wow fadeInUp' data-wow-delay='0.1s'>
+              <div className='col-md-3 wow fadeInUp' data-wow-delay='0.1s'>
                 <div className='member'>
                   <img src='images/team/dariothornhill.jpg' className='img-fluid' alt='' />
                   <div className='member-info'>
@@ -604,10 +623,10 @@ const Landing = props => {
                       <span>Source Code Developer Academy Lead</span>
                       <div className='social'>
                         <a href='#'>
-                          <i className='fa fa-twitter' />
+                          <i className='fab fa-twitter' />
                         </a>
                         <a href='#'>
-                          <i className='fa fa-linkedin' />
+                          <i className='fab fa-linkedin' />
                         </a>
                       </div>
                     </div>
@@ -615,7 +634,7 @@ const Landing = props => {
                 </div>
               </div>
 
-              <div className='col-lg-4 col-md-4 wow fadeInUp' data-wow-delay='0.2s'>
+              <div className='col-md-3 wow fadeInUp' data-wow-delay='0.2s'>
                 <div className='member'>
                   <img src='images/team/andrehaynes.jpg' className='img-fluid' alt='' />
                   <div className='member-info'>
@@ -624,11 +643,11 @@ const Landing = props => {
                       <span>CEO, Tokamak</span>
                       <div className='social'>
                         <a href='#'>
-                          <i className='fa fa-twitter' />
+                          <i className='fab fa-twitter' />
                         </a>
 
                         <a href='#'>
-                          <i className='fa fa-linkedin' />
+                          <i className='fab fa-linkedin' />
                         </a>
                       </div>
                     </div>
@@ -866,8 +885,9 @@ const Landing = props => {
                     <div className='footer-links'>
                       <h4>Contact Us</h4>
                       <p>
-                        <strong>Email:</strong> info@barcode.network
-                        <br />
+                        {/* <strong>Email:</strong> info@barcode.network
+                        <br /> */}
+                        <strong>Whatsapp group:</strong> https://chat.whatsapp.com/0h0sfuqt8WQGryE2titwvI
                       </p>
                     </div>
 

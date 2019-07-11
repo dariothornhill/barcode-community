@@ -708,7 +708,8 @@ h6 {
 --------------------------------*/
 
 #call-to-action {
-  background: #2d2b46;
+  background: #009688;
+  /* background: #2d2b46; */
   background-size: cover;
   padding: 40px 0;
 }
