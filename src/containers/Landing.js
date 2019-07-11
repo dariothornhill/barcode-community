@@ -113,13 +113,24 @@ const Landing = props => {
               <p>We have proudly partnered with the following organizations</p>
             </header>
 
-            <div style={{ textAlign: 'center' }}>
-              <a href='https://developers.facebook.com/developercircles/' rel='noopener noreferrer' target='_blank'>
-                <img src='images/partners/fb_devc_logo.png' alt='' height='200px' />
-              </a>
-              <a href='http://futureguyana.com' rel='noopener noreferrer' target='_blank'>
-                <img src='images/partners/futureguyana-02.png' alt='' height='200px' />
-              </a>
+            <div className='row mx-auto align-items-center'>
+              <div className='col'>
+                {' '}
+                <a href='http://futureguyana.com' rel='noopener noreferrer' target='_blank'>
+                  <img src='images/partners/futureguyana-02.png' alt='' className='img-fluid' />
+                </a>
+              </div>
+              <div className='col'>
+                <a href='https://developers.facebook.com/developercircles/' rel='noopener noreferrer' target='_blank'>
+                  <img src='images/partners/fb_devc_logo.png' alt='' className='img-fluid' />
+                </a>
+              </div>
+
+              <div className='col'>
+                <a href='https://www.tenhabitat.com/source-code-academy' rel='noopener noreferrer' target='_blank'>
+                  <img src='images/partners/sourcecode-devacademy.jpg' alt='' className='img-fluid' />
+                </a>
+              </div>
             </div>
           </div>
         </section>
