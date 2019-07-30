@@ -620,12 +620,12 @@ const Landing = props => {
                   <div className='member-info'>
                     <div className='member-info-content'>
                       <h4>Dario Thornhill</h4>
-                      <span>Source Code Developer Academy Lead</span>
+                      <span>Solutions Architect &amp; SCDA Lead Instructor</span>
                       <div className='social'>
-                        <a href='#'>
+                        <a href='https://twitter.com/dariothornhill'>
                           <i className='fab fa-twitter' />
                         </a>
-                        <a href='#'>
+                        <a href='https://www.linkedin.com/in/dario-thornhill'>
                           <i className='fab fa-linkedin' />
                         </a>
                       </div>
